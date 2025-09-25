@@ -1,0 +1,36 @@
+// src/data.js
+// export const itemsData = [
+//   { id: 1, name: "Monitor", description: "27-inch 4K monitor" },
+//   { id: 2, name: "Keyboard", description: "Mechanical keyboard with RGB lighting" },
+//   { id: 3, name: "Headphones", description: "Noise-cancelling over-ear headphones" },
+//   { id: 4, name: "Mouse", description: "Wireless ergonomic mouse" },
+//   { id: 5, name: "Laptop", description: "15-inch laptop with Intel i7" },
+//   { id: 6, name: "CPU", description: "8-core high performance processor" },
+//   { id: 7, name: "GPU", description: "High-end graphics card" },
+//   { id: 8, name: "Motherboard", description: "ATX motherboard with Wi-Fi support" },
+//   { id: 9, name: "RAM", description: "16GB DDR4 memory module" },
+//   { id: 10, name: "Hard Drive", description: "2TB external HDD" },
+//   { id: 11, name: "SSD", description: "1TB NVMe solid state drive" },
+//   { id: 12, name: "Printer", description: "All-in-one wireless printer" },
+//   { id: 13, name: "Router", description: "Dual-band Wi-Fi 6 router" },
+//   { id: 14, name: "Webcam", description: "HD 1080p webcam" },
+//   { id: 15, name: "Speakers", description: "2.1 channel desktop speakers" },
+// ];
+
+ export const itemsData = [
+  { id: 1, name: "Monitor", description: "27-inch 4K monitor", image: "https://img.icons8.com/color/96/monitor.png" },
+  { id: 2, name: "Keyboard", description: "Mechanical keyboard with RGB lighting", image: "https://img.icons8.com/color/96/keyboard.png" },
+  { id: 3, name: "Headphones", description: "Noise-cancelling over-ear headphones", image: "https://img.icons8.com/color/96/headphones.png" },
+  { id: 4, name: "Mouse", description: "Wireless ergonomic mouse", image: "https://img.icons8.com/color/96/mouse.png" },
+  { id: 5, name: "Laptop", description: "15-inch laptop with Intel i7", image: "https://img.icons8.com/color/96/laptop.png" },
+  { id: 6, name: "CPU", description: "8-core high performance processor", image: "https://img.icons8.com/color/96/cpu.png" },
+  { id: 7, name: "GPU", description: "High-end graphics card", image: "https://img.icons8.com/color/96/graphics-card.png" },
+  { id: 8, name: "Motherboard", description: "ATX motherboard with Wi-Fi support", image: "https://img.icons8.com/color/96/motherboard.png" },
+  { id: 9, name: "RAM", description: "16GB DDR4 memory module", image: "https://img.icons8.com/color/96/ram.png" },
+  { id: 10, name: "Hard Drive", description: "2TB external HDD", image: "https://img.icons8.com/color/96/external-hard-drive.png" },
+  { id: 11, name: "SSD", description: "1TB NVMe solid state drive", image: "https://img.icons8.com/color/96/ssd.png" },
+  { id: 12, name: "Printer", description: "All-in-one wireless printer", image: "https://img.icons8.com/color/96/printer.png" },
+  { id: 13, name: "Router", description: "Dual-band Wi-Fi 6 router", image: "https://img.icons8.com/color/96/wifi-router.png" },
+  { id: 14, name: "Webcam", description: "HD 1080p webcam", image: "https://img.icons8.com/color/96/webcam.png" },
+  { id: 15, name: "Speakers", description: "2.1 channel desktop speakers", image: "https://img.icons8.com/color/96/speaker.png" },
+];
