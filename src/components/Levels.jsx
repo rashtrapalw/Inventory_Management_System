@@ -1,60 +1,73 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
 
 function Levels() {
+  const [items, setItems] = useState([]);
+
+
+
+  useEffect(() => {
+    fetch("https://electronics-data-naho.onrender.com/items") // your JSON server endpoint
+      .then((res) => res.json())
+      .then((data) => setItems(data))
+      .catch((err) => console.error(err));
+  }, []);
+
+  if (!items || items.length === 0) {
+    return <div className="container my-3">Loading inventory data...</div>;
+  }
+
   return (
     <div className="container my-3">
       <h4>Inventory Levels</h4>
 
-      {/* Saw */}
-      <div className="mb-3">
-        <label className="form-label">Saw</label>
-        <div className="progress">
-          <div
-            className="progress-bar"
-            role="progressbar"
-            style={{ width: "70%" }}
-            aria-valuenow="70"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            70%
-          </div>
-        </div>
-      </div>
+      {items.map((item) => {
+        if (!item.details || item.details.length === 0) return null;
 
-      {/* Hammer */}
-      <div className="mb-3">
-        <label className="form-label">Hammer</label>
-        <div className="progress">
-          <div
-            className="progress-bar bg-warning"
-            role="progressbar"
-            style={{ width: "40%" }}
-            aria-valuenow="40"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            40%
-          </div>
-        </div>
-      </div>
+        const labels = item.details.map((d) => d.company);
+        const dataCounts = item.details.map((d) => d.count);
 
-      {/* T-Square */}
-      <div className="mb-3">
-        <label className="form-label">T-Square</label>
-        <div className="progress">
-          <div
-            className="progress-bar bg-success"
-            role="progressbar"
-            style={{ width: "90%" }}
-            aria-valuenow="90"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            90%
+        const data = {
+          labels,
+          datasets: [
+            {
+              label: "Stock Count",
+              data: dataCounts,
+              backgroundColor: "rgba(54, 162, 235, 0.6)",
+              borderColor: "rgba(54, 162, 235, 1)",
+              borderWidth: 1,
+            },
+          ],
+        };
+
+        const options = {
+          responsive: true,
+          maintainAspectRatio: false, // makes chart take container height
+          plugins: {
+            legend: { position: "top" },
+            title: { display: true, text: item.name + " Stock by Company" },
+          },
+          scales: { y: { beginAtZero: true } },
+        };
+
+        return (
+          <div key={item.id} className="mb-5" style={{ height: "300px" }}>
+            <Bar data={data} options={options} />
           </div>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 }

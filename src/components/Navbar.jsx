@@ -16,7 +16,9 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar navbar-light bg-light shadow-sm">
+    {/*navbar color  */}
+      {/* <nav className="navbar navbar-light bg-light shadow-sm"  >   */}
+        <nav className="navbar navbar-light  shadow-sm" style={{ backgroundColor: "#4C7C78" }}>    
         <div className="container-fluid d-flex align-items-center position-relative">
 
           {/* Menu Icon on the left */}
@@ -25,6 +27,7 @@ function Navbar() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setSidebarOpen(true)}
+            style={{ color: "#f4f9f9ff" }}
           >
             <AiOutlineMenu size={25} />
           </button>
@@ -36,8 +39,8 @@ function Navbar() {
                     className="navbar-brand d-flex align-items-center m-0 p-0"
                     href="#"
                   >
-                    <i className="bi bi-box-seam me-1"></i>
-                    <span className="fw-bold">Inventory</span>
+                    <i className="bi bi-box-seam me-1" style={{ color: "#f4f9f9ff" }}></i>
+                    <span className="fw-bold" style={{ color: "#f4f9f9ff" }}>Inventory</span>
                   </a>
                 </div>
 

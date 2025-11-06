@@ -1,0 +1,4 @@
+.card:hover{
+    transform: translate(-5px);
+    background: #ececefaf;
+}

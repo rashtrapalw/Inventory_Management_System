@@ -1,5 +1,7 @@
 import React from "react";
 
+import Login from "./Login";
+
 function Sidebar({ isOpen, onClose }) {
   return (
     <>
@@ -24,7 +26,7 @@ function Sidebar({ isOpen, onClose }) {
       >
         <h5 className="mb-4">Menu</h5>
         <nav className="nav flex-column">
-          <a className="nav-link text-dark mb-2" href="#">
+          {/* <a className="nav-link text-dark mb-2" href="#">
             📋 Inventory Log
           </a>
           <a className="nav-link text-dark mb-2" href="#">
@@ -38,8 +40,8 @@ function Sidebar({ isOpen, onClose }) {
           </a>
           <a className="nav-link text-dark mb-2" href="#">
             ℹ About
-          </a>
-          <a className="nav-link text-dark mb-2" href="#">
+          </a> */}
+          <a className="nav-link text-dark mb-2" href="{Login}">
             🚪 Log Out
           </a>
         </nav>
@@ -49,3 +51,4 @@ function Sidebar({ isOpen, onClose }) {
 }
 
 export default Sidebar;
+
