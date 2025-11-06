@@ -120,13 +120,17 @@ function Login({ onLogin }) {
               >
                 ADMIN LOGIN
               </p>
-              <a
+              {/* <a
                 href="#"
                 className="small text-muted"
                 style={{ textDecoration: "none" }}
               >
                 Need help?
-              </a>
+              </a> */}
+              <span>
+              <p>Username : admin</p>
+              <p>Password : admin123</p>
+              </span>
             </div>
 
             <form onSubmit={handleLogin}>
